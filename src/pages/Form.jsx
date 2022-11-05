@@ -26,16 +26,16 @@ function Form() {
         <div className='form-container'>
             <form onSubmit={handlesubmit} >
                 <label htmlFor="">COLOR 1</label>
-                <input type="text" name="color_1" onChange={handlechange} value={inputs.color_1 || ""} />
+                <input type="text" name="color_1" onChange={handlechange} value={inputs.color_1 || ""} placeholder="eg. #ffffff" />
 
                 <label htmlFor="">COLOR 2</label>
-                <input type="text" name="color_2" onChange={handlechange} value={inputs.color_2 || ""} />
+                <input type="text" name="color_2" onChange={handlechange} value={inputs.color_2 || ""} placeholder="eg. #ffffff" />
 
                 <label htmlFor="">COLOR 3</label>
-                <input type="text" name="color_3" onChange={handlechange} value={inputs.color_3 || ""} />
+                <input type="text" name="color_3" onChange={handlechange} value={inputs.color_3 || ""} placeholder="eg. #ffffff" />
 
                 <label htmlFor="">COLOR 4</label>
-                <input type="text" name="color_4" onChange={handlechange} value={inputs.color_4 || ""} />
+                <input type="text" name="color_4" onChange={handlechange} value={inputs.color_4 || ""} placeholder="eg. #ffffff" />
                 <input type="submit" value="Submit" />
             </form>
         </div>
