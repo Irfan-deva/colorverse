@@ -100,7 +100,7 @@
 }
 
 .palette div:hover .__color {
-  display: inline;
+  display: inline-block;
 }
 
 .__color {
@@ -111,7 +111,7 @@
   cursor: pointer;
 }
 
-.palette div p {
+.palette div span {
   background-color: rgba(0, 0, 0, 0.25);
   color: white;
   font-weight: 300;

@@ -8,7 +8,8 @@ function Palette(props) {
 
 
         navigator.clipboard.writeText(mcolor);
-
+        event.target.innerHTML = 'copied';
+        setTimeout(() => { event.target.innerHTML = mcolor }, 2000)
         //event.target.innerHTML = color;
         console.log(mcolor);
     }
@@ -23,10 +24,10 @@ function Palette(props) {
     return (
         <div className='palette-container' >
             <div className="palette">
-                <div style={{ backgroundColor: props.data.color_1 }} className="ist"><p className='__color one' onClick={chooseColorr}> {props.data.color_1} </p ></div>
-                <div style={{ backgroundColor: props.data.color_2 }} className="second"><p className='__color two' onClick={chooseColorr}> {props.data.color_2} </p ></div>
-                <div style={{ backgroundColor: props.data.color_3 }} className="third"><p className='__color three' onClick={chooseColorr}> {props.data.color_3} </p ></div>
-                <div style={{ backgroundColor: props.data.color_4 }} className="fourth"><p className='__color four' onClick={chooseColorr}> {props.data.color_4} </p ></div>
+                <div style={{ backgroundColor: props.data.color_1 }} className="ist"><span className='__color one' onClick={chooseColorr}> {props.data.color_1} </span > </div>
+                <div style={{ backgroundColor: props.data.color_2 }} className="second"><span className='__color two' onClick={chooseColorr}> {props.data.color_2} </span > </div>
+                <div style={{ backgroundColor: props.data.color_3 }} className="third"><span className='__color three' onClick={chooseColorr}> {props.data.color_3} </span > </div>
+                <div style={{ backgroundColor: props.data.color_4 }} className="fourth"><span className='__color four' onClick={chooseColorr}> {props.data.color_4} </span ></div>
             </div>
 
             <div className="footer" >
