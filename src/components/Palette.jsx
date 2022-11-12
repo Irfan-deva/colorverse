@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 import heart_icon_border from '../heart-icon.png'
+import heart_icon_filled from '../heart-icon-filled.png'
+
 function Palette(props) {
     //copy selected color to clipboard
     let chooseColorr = (event) => {
@@ -13,10 +15,12 @@ function Palette(props) {
     }
     // update likes count
     // I'm passing the second parameter(data) as null, because I'm handling increment on server side => previousCount +1
-    let handleLike = (event, id) => {
-        axios.put(`http://localhost:3001/api/colors/update/${id}`, null)
+    let handleLike = (e, id) => {
+        axios.get(`https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=like&id=${id}`)
             .then(response => {
-                //console.log(response.data);
+                console.log(response);
+                console.log(e);
+                e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${response.data}</span>`;
             })
     }
     return (
@@ -29,10 +33,10 @@ function Palette(props) {
             </div>
 
             <div className="footer" >
-                <div className="likes" onClick={(e) => handleLike(e, props.data.palette_id)}><img src={heart_icon_border} alt="" width={18} /> {props.data.likes || 0}</div>
+                <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.palette_id)}><img src={heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
                 <div className="pub-date">{props.data.pub_date}</div>
             </div>
-        </div>
+        </div >
 
     )
 }
