@@ -15,12 +15,14 @@ function Palette(props) {
     }
     // update likes count
     // I'm passing the second parameter(data) as null, because I'm handling increment on server side => previousCount +1
-    let handleLike = (e, id) => {
+    let handleLike = (e, id, preLikes) => {
+        let updateLikes = parseInt(preLikes) + 1;
+        e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
         axios.get(`https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=like&id=${id}`)
             .then(response => {
-                console.log(response);
-                console.log(e);
-                e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${response.data}</span>`;
+                //console.log(response);
+                //console.log(e);
+
             })
     }
     return (
@@ -33,7 +35,7 @@ function Palette(props) {
             </div>
 
             <div className="footer" >
-                <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.palette_id)}><img src={heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
+                <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.palette_id, props.data.likes)}><img src={heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
                 <div className="pub-date">{props.data.pub_date}</div>
             </div>
         </div >
