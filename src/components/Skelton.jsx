@@ -2,7 +2,7 @@ import React from 'react'
 
 function Skelton() {
   return (
-    <div className="palette" style={{ background: "#ccc" }}>
+    <div className="palette" style={{ background: "#ccc", borderRadius: "6px" }}>
       <div className="ist" ></div>
       <div className="second"> </div>
       <div className="third"> </div>
