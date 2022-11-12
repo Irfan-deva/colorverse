@@ -24,7 +24,7 @@ function Palette(props) {
             })
     }
     return (
-        <div className='palette-container' >
+        <div className='palette-container'>
             <div className="palette">
                 <div style={{ backgroundColor: props.data.color_1 }} className="ist"><span className='__color one' onClick={chooseColorr}> {props.data.color_1} </span > </div>
                 <div style={{ backgroundColor: props.data.color_2 }} className="second"><span className='__color two' onClick={chooseColorr}> {props.data.color_2} </span > </div>

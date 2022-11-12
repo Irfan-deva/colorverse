@@ -26,9 +26,9 @@ function Home() {
     return <div className='container'>
         <Leftbar handleData={setColorpalettes} />
         <div className='grid-container'>
-            {palettes.map((palette) => {
+            {palettes.map((palette, index) => {
                 return (
-                    <Suspense fallback={<Skelton />}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
+                    <Suspense fallback={<Skelton key={index} />}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
                 )
             })}
 
