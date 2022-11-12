@@ -31,7 +31,7 @@ function Navigation() {
 
     return (
         <div className='nav-container'>
-            <Link to={'/'}><div className="logo"><img src={logo} alt="" width={30} /><p>COLOR VERSE</p> </div></Link>
+            <Link to={'/'}><div className="logo"><img src={logo} alt="" width={30} /><p>COLORVERSE</p> </div></Link>
 
             <div className="menu" onClick={toogleMenu} ref={toogleRef}>
                 <img src={menu_icon} alt="" width={30} />

@@ -11,7 +11,7 @@ function Skelton() {
       </div>
       <div className="footer" >
         <div style={{ width: "50px", height: "20px", background: "#dedede", borderRadius: "5px" }}></div>
-        <div style={{ width: "50px", height: "20px", background: "#dedede", borderRadius: "5px" }}></div>
+        <div style={{ width: "60px", height: "20px", background: "#dedede", borderRadius: "5px" }}></div>
       </div>
     </div>
   )
