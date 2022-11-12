@@ -5,20 +5,18 @@ function Palette(props) {
     //copy selected color to clipboard
     let chooseColorr = (event) => {
         const mcolor = event.target.innerHTML;
-
-
         navigator.clipboard.writeText(mcolor);
         event.target.innerHTML = 'copied';
         setTimeout(() => { event.target.innerHTML = mcolor }, 2000)
         //event.target.innerHTML = color;
-        console.log(mcolor);
+        //console.log(mcolor);
     }
     // update likes count
     // I'm passing the second parameter(data) as null, because I'm handling increment on server side => previousCount +1
     let handleLike = (event, id) => {
         axios.put(`http://localhost:3001/api/colors/update/${id}`, null)
             .then(response => {
-                console.log(response.data);
+                //console.log(response.data);
             })
     }
     return (
