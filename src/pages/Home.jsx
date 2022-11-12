@@ -28,7 +28,7 @@ function Home() {
         <div className='grid-container'>
             {palettes.map((palette) => {
                 return (
-                    <Suspense fallback={Skelton}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
+                    <Suspense fallback={<Skelton />}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
                 )
             })}
 
