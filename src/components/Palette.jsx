@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
-import heart_icon_border from '../heart-icon.png'
-import heart_icon_filled from '../heart-icon-filled.png'
+import heart_icon_border from '../heart-icon.png';
+import heart_icon_filled from '../heart-icon-filled.png';
 
 function Palette(props) {
     //copy selected color to clipboard
@@ -14,7 +14,6 @@ function Palette(props) {
         //console.log(mcolor);
     }
     // update likes count
-    // I'm passing the second parameter(data) as null, because I'm handling increment on server side => previousCount +1
     let handleLike = (e, id, preLikes) => {
         let updateLikes = parseInt(preLikes) + 1;
         e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
@@ -23,7 +22,7 @@ function Palette(props) {
                 //console.log(response);
                 //console.log(e);
 
-            })
+            });
     }
     return (
         <div className='palette-container'>

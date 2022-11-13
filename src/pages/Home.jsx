@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import Leftbar from '../components/Leftbar';
-import Skelton from '../components/Skelton';
+import Skeleton from '../components/Skeleton';
 //import Palette from '../components/Palette';
 import '../css/Home.css';
 
@@ -28,11 +28,9 @@ function Home() {
         <div className='grid-container'>
             {palettes.map((palette, index) => {
                 return (
-                    <Suspense fallback={<Skelton key={index} />}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
+                    <Suspense fallback={<Skeleton key={index} />}>  <Palette data={palette} key={palette.palette_id} /></Suspense>
                 )
             })}
-
-
         </div >
 
     </div>

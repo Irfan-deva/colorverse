@@ -97,6 +97,8 @@
   aspect-ratio: 1/1;
   height: 100%;
   width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .palette div:hover .__color {
@@ -119,8 +121,6 @@
 }
 
 .ist {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   height: 40%;
   display: flex;
   align-items: flex-end;
@@ -142,8 +142,6 @@
 }
 
 .fourth {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
   height: 15%;
   display: flex;
   align-items: flex-end;

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Skelton() {
+function Skeleton() {
   return (
     <div className='palette-container'>
-      <div className="palette" style={{ background: "#dedede", borderRadius: "6px" }}>
+      <div className="palette" style={{ background: "#dedede", borderRadius: "15px" }}>
         <div className="ist" ></div>
         <div className="second"> </div>
         <div className="third"> </div>
@@ -17,4 +17,4 @@ function Skelton() {
   )
 }
 
-export default Skelton
+export default Skeleton
