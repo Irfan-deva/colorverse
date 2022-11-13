@@ -120,36 +120,29 @@
   font-size: 14px;
 }
 
-.ist {
-  height: 40%;
+.ist,
+.second,
+.third,
+.fourth {
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+}
+
+.ist {
+  height: 35%;
 }
 
 .second {
   height: 25%;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
 }
 
 .third {
-  height: 20%;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
+  height: 22%;
 }
 
 .fourth {
-  height: 15%;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.four {
-  border-bottom-left-radius: 15px;
+  height: 18%;
 }
 
 .one,
@@ -157,7 +150,7 @@
 .three,
 .four {
   border-top-right-radius: 6px;
-  padding: 3px 5px;
+  padding: 4px 3px;
 }
 
 @media (max-width:700px) {
