@@ -10,6 +10,7 @@ const Palette = lazy(() => import('../components/Palette'))
 function Home() {
     const [palettes, setColorpalettes] = useState([]);
 
+
     //fetch color pelettes from database
     useEffect(function () {
         axios.get('https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=getAllPalettes')
