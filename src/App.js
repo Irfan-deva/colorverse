@@ -8,6 +8,7 @@ import './App.css'
 import Form from './pages/Form';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
 
 
 function App() {
@@ -35,7 +36,12 @@ function App() {
         {
           path: "form",
           element: <Form />
+        },
+        {
+          path: "contact",
+          element: <Contact />
         }
+
       ]
     }
 

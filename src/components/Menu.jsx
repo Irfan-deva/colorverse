@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import '../css/Menu.main.css'
 
 function Menu({ toogleIt }) {
-    const menu_items = ['Home', 'Create', 'Contact', 'About', 'made by Irfan deva'];
-    const links = ['/', '/form', '/', '/', '/']
+
     return (
         <>
             <ul>
-                {
-                    menu_items.map((item, key) => {
-                        return (
-                            <li key={key}><Link className='link' onClick={toogleIt} to={links[key]}>{item}</Link></li>
-                        )
-                    })
-                }
+
+                <li><Link className='link' onClick={toogleIt} to={'/'}>Home</Link></li>
+                <li><Link className='link' onClick={toogleIt} to={'/form'}>Create</Link></li>
+                <li><a className='link' href="https://irfandeva.netlify.app" target="_blank" rel="noreferrer">Contact</a></li>
+                <li><Link className='link' onClick={toogleIt} to={'/'}>About</Link></li>
+                <li><span className='link'>made by Irfan deva</span></li>
+
+
             </ul>
 
         </>
