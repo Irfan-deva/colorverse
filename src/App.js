@@ -34,11 +34,11 @@ function App() {
           element: <Home />
         },
         {
-          path: "form",
+          path: "/form",
           element: <Form />
         },
         {
-          path: "contact",
+          path: "/contact",
           element: <Contact />
         }
 
