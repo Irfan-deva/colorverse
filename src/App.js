@@ -14,7 +14,6 @@ import Contact from './pages/Contact';
 function App() {
   const Layout = () => {
     return (
-
       <div>
         <Navigation />
         <Outlet />
@@ -28,6 +27,7 @@ function App() {
     {
       path: '/',
       element: <Layout />,
+      errorElement: <div>oops, Something went wrong</div>,
       children: [
         {
           path: "/",
@@ -46,11 +46,6 @@ function App() {
     }
 
   ])
-
-
-
-
-
   return (
     <>
       <RouterProvider router={router} />

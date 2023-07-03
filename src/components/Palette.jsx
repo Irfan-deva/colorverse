@@ -31,12 +31,9 @@ function Palette(props) {
         e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
         axios.get(`https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=like&id=${id}`)
             .then(response => {
-                //console.log(response);
-                //console.log(e);
-
                 localStorage.setItem('colors', localStorage.getItem('colors') + "," + id);
                 setFavourites(...favourites, id);
-
+                e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
             });
     }
     return (
@@ -49,7 +46,6 @@ function Palette(props) {
             </div>
 
             <div className="footer" >
-
                 <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.palette_id, props.data.likes)}><img src={favourites.includes(props.data.palette_id) ? heart_icon_filled : heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
                 <div className="pub-date">{props.data.pub_date}</div>
             </div>

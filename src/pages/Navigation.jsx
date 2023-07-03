@@ -9,14 +9,14 @@ import Menu from '../components/Menu';
 import { useRef } from 'react';
 
 function Navigation() {
-    const [isOn, toogleIsOn] = useState(false);
+    const [toogleIsOn, setToogleIsOn] = useState(false);
     let toogleRef = useRef();
     let menuRef = useRef();
 
     useEffect(() => {
         let handler = (event) => {
             if (!toogleRef.current.contains(event.target) && !menuRef.current.contains(event.target)) {
-                toogleIsOn(false);
+                setToogleIsOn(false);
             }
 
         }
@@ -27,7 +27,7 @@ function Navigation() {
     })
 
     // toogle menu
-    const toogleMenu = () => isOn ? toogleIsOn(false) : toogleIsOn(true)
+    const toogleMenu = () => toogleIsOn ? setToogleIsOn(false) : setToogleIsOn(true)
 
     return (
         <div className='nav-container'>
@@ -36,7 +36,7 @@ function Navigation() {
             <div className="menu" onClick={toogleMenu} ref={toogleRef}>
                 <img src={menu_icon} alt="" width={30} />
             </div>
-            <div className='main-menu' ref={menuRef}>  {isOn && <Menu toogleIt={toogleMenu} />}</div>
+            <div className='main-menu' ref={menuRef}>  {toogleIsOn && <Menu toogleIt={toogleMenu} />}</div>
 
         </div>
     )
