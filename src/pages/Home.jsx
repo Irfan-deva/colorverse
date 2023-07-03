@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import Leftbar from '../components/Leftbar';
 import Skeleton from '../components/Skeleton';
 //import Palette from '../components/Palette';
@@ -15,14 +14,9 @@ function Home() {
     const dispatch = useDispatch();
 
     //fetch color pelettes from database
-    useEffect(function () {
-        dispatch(getAllPalettes());
-        // axios.get('https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=getAllPalettes')
+    useEffect(() => {
 
-        //     .then(response => {
-        //         setColorpalettes(response.data)
-        //         // console.log(response.data);
-        //     })
+        dispatch(getAllPalettes());
     }, []);
 
 
@@ -31,7 +25,7 @@ function Home() {
         <div className='grid-container'>
             {palettes && palettes.map((palette, index) => {
                 return (
-                    <Suspense fallback={<Skeleton key={index} />}>
+                    <Suspense fallback={<Skeleton key={palette.palette_id} />}>
                         <Palette data={palette} key={palette.palette_id} />
                     </Suspense>
                 )
