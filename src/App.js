@@ -6,10 +6,10 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Form from './pages/Form';
-import Navigation from './pages/Navigation';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Popular from './pages/Popular';
+import Navigation from './components/Navigation';
 
 
 function App() {

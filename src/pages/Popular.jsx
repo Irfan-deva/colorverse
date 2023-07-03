@@ -19,7 +19,7 @@ function Popular() {
     <div className='grid-container'>
       {popular && popular.map((palette, index) => {
         return (
-          <Suspense fallback={<Skeleton key={palette.palette_id} />}>
+          <Suspense fallback={<Skeleton />} key={palette.palette_id}>
             <Palette data={palette} key={palette.palette_id} />
           </Suspense>
         )
