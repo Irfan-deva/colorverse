@@ -1,22 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// import axios from 'axios';
-function Leftbar() {
+function Leftbar({ page }) {
 
-    // const setPopular = () => {
-    //     axios.get('http://localhost:3001/api/colors/popular')
-    //         .then(response => {
-    //             console.log(response.data);
-    //             // props.handleData(response.data);
-    //         })
-    // }
+
     return (
         <div className='leftbar-container'>
 
             <ul className='nav-links'>
-                <li className='active'>New</li>
-                <li>Popular</li>
-                <li>Random</li>
+
+                <Link to={'/'} className={page === 'home' ? 'active' : ''}>  <li >New</li></Link>
+                <Link to={'/popular'} className={page === 'popular' ? 'active' : ''}> <li>Popular</li></Link>
+                <Link to={'/random'} className={page === 'random' ? 'active' : ''}>  <li>Random</li></Link>
             </ul>
         </div>
     )

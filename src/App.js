@@ -9,6 +9,7 @@ import Form from './pages/Form';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Popular from './pages/Popular';
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
         {
           path: "/",
           element: <Home />
+        },
+        {
+          path: "/popular",
+          element: <Popular />
         },
         {
           path: "/form",

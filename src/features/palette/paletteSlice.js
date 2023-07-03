@@ -28,4 +28,9 @@ export const paletteSlice = createSlice({
 
   }
 });
+export const getPopular = (state) => {
+  //return state.colors.palettes
+  let pl = [...state.colors.palettes];
+  return pl.sort((a, b) => parseInt(b.likes) - parseInt(a.likes))
+}
 export default paletteSlice.reducer;
