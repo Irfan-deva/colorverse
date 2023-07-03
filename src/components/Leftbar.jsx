@@ -1,15 +1,15 @@
 import React from 'react';
 
-import axios from 'axios';
+// import axios from 'axios';
 function Leftbar() {
 
-    const setPopular = () => {
-        axios.get('http://localhost:3001/api/colors/popular')
-            .then(response => {
-                console.log(response.data);
-                // props.handleData(response.data);
-            })
-    }
+    // const setPopular = () => {
+    //     axios.get('http://localhost:3001/api/colors/popular')
+    //         .then(response => {
+    //             console.log(response.data);
+    //             // props.handleData(response.data);
+    //         })
+    // }
     return (
         <div className='leftbar-container'>
 

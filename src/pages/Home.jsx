@@ -15,8 +15,8 @@ function Home() {
 
     //fetch color pelettes from database
     useEffect(() => {
-
         dispatch(getAllPalettes());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 
