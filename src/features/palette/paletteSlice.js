@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const BASE_URL = 'http://knowledgebase.whf.bz/';
+const BASE_URL = 'https://knowledgebase.whf.bz/';
 
 export const getAllPalettes = createAsyncThunk('getAllPalettes', async () => {
   const response = await fetch(`${BASE_URL}/?action=getColors`);

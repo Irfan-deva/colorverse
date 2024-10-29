@@ -30,7 +30,7 @@ function Palette(props) {
         }
         let updateLikes = parseInt(preLikes) + 1;
         e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
-        await axios.get(`http://knowledgebase.whf.bz/?action=updateLikes&id=${id}`)
+        await axios.get(`https://knowledgebase.whf.bz/?action=updateLikes&id=${id}`)
             .then(response => {
                 localStorage.setItem('colors', localStorage.getItem('colors') + "," + id);
                 setFavourites(...favourites, id);

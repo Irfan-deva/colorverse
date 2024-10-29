@@ -4,7 +4,7 @@ import '../css/form.css'
 
 function Form() {
 
-    const [inputs, setIputs] = useState({ 'action': 'insertPalette' });
+    const [inputs, setIputs] = useState({ 'action': 'addColor' });
     const handlechange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -16,7 +16,7 @@ function Form() {
     console.log('form me');
     const handlesubmit = (e) => {
         e.preventDefault();
-        axios.post("https://irfandevsportfolio.000webhostapp.com/colorverse/api/", inputs, {
+        axios.post("https://knowledgebase.whf.bz/?action=updateLikes&id=${id}", inputs, {
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(response => {
             console.log(response)

@@ -11,7 +11,7 @@ function Leftbar({ page }) {
 
                 <Link to={'/'} className={page === 'home' ? 'active' : ''}>  <li >New</li></Link>
                 <Link to={'/popular'} className={page === 'popular' ? 'active' : ''}> <li>Popular</li></Link>
-                <Link to={'/random'} className={page === 'random' ? 'active' : ''}>  <li>Random</li></Link>
+                <Link to={'/'} className={page === 'random' ? 'active' : ''}>  <li>Random</li></Link>
             </ul>
         </div>
     )
