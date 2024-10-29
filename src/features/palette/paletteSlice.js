@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const BASE_URL = 'https://irfandevsportfolio.000webhostapp.com/colorverse/api';
+const BASE_URL = 'http://knowledgebase.whf.bz/';
 
 export const getAllPalettes = createAsyncThunk('getAllPalettes', async () => {
-  const response = await fetch(`${BASE_URL}/?action=getAllPalettes`);
+  const response = await fetch(`${BASE_URL}/?action=getColors`);
   try {
     const result = await response.json();
 
-    return result;
+    return result.colors;
   } catch (error) {
 
     return error;

@@ -16,6 +16,7 @@ function Palette(props) {
     //copy selected color to clipboard
     let chooseColorr = (event) => {
         const mcolor = event.target.innerHTML;
+        if (mcolor === 'copied') return
         navigator.clipboard.writeText(mcolor);
         event.target.innerHTML = 'copied';
         setTimeout(() => { event.target.innerHTML = mcolor }, 2000)
@@ -23,13 +24,13 @@ function Palette(props) {
         //console.log(mcolor);
     }
     // update likes count
-    let handleLike = (e, id, preLikes) => {
+    let handleLike = async (e, id, preLikes) => {
         if (favourites.includes(id)) {
             return;
         }
         let updateLikes = parseInt(preLikes) + 1;
         e.innerHTML = `<img src=${heart_icon_filled} alt="" width=${18} /> <span>${updateLikes}</span>`;
-        axios.get(`https://irfandevsportfolio.000webhostapp.com/colorverse/api/?action=like&id=${id}`)
+        await axios.get(`http://knowledgebase.whf.bz/?action=updateLikes&id=${id}`)
             .then(response => {
                 localStorage.setItem('colors', localStorage.getItem('colors') + "," + id);
                 setFavourites(...favourites, id);
@@ -46,7 +47,7 @@ function Palette(props) {
             </div>
 
             <div className="footer" >
-                <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.palette_id, props.data.likes)}><img src={favourites.includes(props.data.palette_id) ? heart_icon_filled : heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
+                <div className="likes" onClick={(e) => handleLike(e.currentTarget, props.data.id, props.data.likes)}><img src={favourites.includes(props.data.palette_id) ? heart_icon_filled : heart_icon_border} alt="" width={18} /> <span>{props.data.likes || 0}</span></div>
                 <div className="pub-date">{props.data.pub_date}</div>
             </div>
         </div >
