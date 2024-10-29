@@ -16,7 +16,7 @@ function Form() {
     console.log('form me');
     const handlesubmit = (e) => {
         e.preventDefault();
-        axios.post("https://knowledgebase.whf.bz/?action=updateLikes&id=${id}", inputs, {
+        axios.post("https://knowledgebase.whf.bz/", inputs, {
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(response => {
             console.log(response)
